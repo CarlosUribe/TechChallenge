@@ -21,6 +21,10 @@
 		B2127EB72129D41600FF6F57 /* CMainControllerTransitionReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB62129D41600FF6F57 /* CMainControllerTransitionReplace.swift */; };
 		B2127EB92129D49B00FF6F57 /* CWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB82129D49B00FF6F57 /* CWelcomeController.swift */; };
 		B2127EBC2129D4DD00FF6F57 /* VMainShade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */; };
+		B2127EBF2129D66400FF6F57 /* VWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EBE2129D66400FF6F57 /* VWelcomeView.swift */; };
+		B2127EC12129D88100FF6F57 /* VWelcomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EC02129D88100FF6F57 /* VWelcomeViewCell.swift */; };
+		B2127EC32129D8E000FF6F57 /* CategoryUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EC22129D8E000FF6F57 /* CategoryUICollectionReusableView.swift */; };
+		B2127EC52129D96500FF6F57 /* VWelcomeViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EC42129D96500FF6F57 /* VWelcomeViewBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		B2127EB62129D41600FF6F57 /* CMainControllerTransitionReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerTransitionReplace.swift; sourceTree = "<group>"; };
 		B2127EB82129D49B00FF6F57 /* CWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWelcomeController.swift; sourceTree = "<group>"; };
 		B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMainShade.swift; sourceTree = "<group>"; };
+		B2127EBE2129D66400FF6F57 /* VWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VWelcomeView.swift; sourceTree = "<group>"; };
+		B2127EC02129D88100FF6F57 /* VWelcomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VWelcomeViewCell.swift; sourceTree = "<group>"; };
+		B2127EC22129D8E000FF6F57 /* CategoryUICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUICollectionReusableView.swift; sourceTree = "<group>"; };
+		B2127EC42129D96500FF6F57 /* VWelcomeViewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VWelcomeViewBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 		B2127E892129CFFB00FF6F57 /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B2127EBD2129D65800FF6F57 /* views */,
 				B2127EBA2129D4CF00FF6F57 /* Helpers */,
 				B2127EAD2129D3D300FF6F57 /* transitions */,
 				B2127EAA2129D34B00FF6F57 /* controllers */,
@@ -140,8 +149,19 @@
 			isa = PBXGroup;
 			children = (
 				B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */,
+				B2127EC22129D8E000FF6F57 /* CategoryUICollectionReusableView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B2127EBD2129D65800FF6F57 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B2127EBE2129D66400FF6F57 /* VWelcomeView.swift */,
+				B2127EC02129D88100FF6F57 /* VWelcomeViewCell.swift */,
+				B2127EC42129D96500FF6F57 /* VWelcomeViewBar.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +267,12 @@
 			files = (
 				B2127EB32129D40000FF6F57 /* CMainControllerTransitionPushRight.swift in Sources */,
 				B2127EAC2129D36D00FF6F57 /* CMain.swift in Sources */,
+				B2127EC12129D88100FF6F57 /* VWelcomeViewCell.swift in Sources */,
 				B2127EB52129D40B00FF6F57 /* CMainControllerTransitionPresent.swift in Sources */,
+				B2127EBF2129D66400FF6F57 /* VWelcomeView.swift in Sources */,
 				B2127EB12129D3F400FF6F57 /* CMainControllerTransition.swift in Sources */,
+				B2127EC52129D96500FF6F57 /* VWelcomeViewBar.swift in Sources */,
+				B2127EC32129D8E000FF6F57 /* CategoryUICollectionReusableView.swift in Sources */,
 				B2127EB72129D41600FF6F57 /* CMainControllerTransitionReplace.swift in Sources */,
 				B2127E8D2129CFFB00FF6F57 /* ViewController.swift in Sources */,
 				B2127EAF2129D3E500FF6F57 /* CMainControllerInteraction.swift in Sources */,
