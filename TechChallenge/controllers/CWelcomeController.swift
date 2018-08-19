@@ -9,8 +9,13 @@
 import UIKit
 
 class CWelcomeController:UIViewController{
+    weak var welcomeView:VWelcomeView!
 
-    override func loadView() {}
+    override func loadView() {
+        let welcomeView:VWelcomeView = VWelcomeView(controller:self)
+        self.welcomeView = welcomeView
+        view = welcomeView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,4 +30,8 @@ class CWelcomeController:UIViewController{
     override var prefersStatusBarHidden:Bool{
         return false
     }
+
+    //MARK: REQEUST CALLS
+
+    func makeSearchWithString(searchString:String){}
 }
