@@ -15,12 +15,15 @@ class VWelcomeView:UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     weak var searchBar:UITextField!
     private let kCornerRadius:CGFloat = 8.0
     private let kBarHeight:CGFloat = 88.0
+    private let kCellConstantHeight:CGFloat = 120
+    var model:MWelcomeSearch?
 
     convenience init(controller:CWelcomeController){
         self.init()
         self.controller = controller
         clipsToBounds = false
         backgroundColor = .white
+        self.model = nil
 
         let topBar:VWelcomeViewBar = VWelcomeViewBar(controller: controller)
         self.topBar = topBar
@@ -104,26 +107,49 @@ class VWelcomeView:UIView, UICollectionViewDelegate, UICollectionViewDataSource,
             views:views))
     }
 
+    //MARK: MODEL ITEM INDEX
+
+    func getModelItem(index:Int) -> MWelcomeSearchItems{
+        return (model?.item[index])!
+    }
+
     //MARK: COLLECTION DELEGATES
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        if model != nil{
+            guard
+                let count:Int = model?.item.count
+                else{
+                    return 0
+            }
+
+            return count
+        }
+        else{
+            return 0
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:UICollectionViewCell = UICollectionViewCell()
+        let model:MWelcomeSearchItems = getModelItem(index: indexPath.row)
+        let cell:VWelcomeViewCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: VWelcomeViewCell.reusableIdentifier(),
+            for:indexPath) as! VWelcomeViewCell
+        cell.config(model:model)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         dismissKeyboard()
 
+        
     }
 
     //MARK: FLOW DELEGATES
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .zero
+        let width:CGFloat = UIScreen.main.bounds.width
+        return CGSize(width: width, height: kCellConstantHeight)
     }
 
     //MARK: UITEXTFIELD DELEGATES

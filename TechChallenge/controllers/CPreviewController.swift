@@ -1,5 +1,5 @@
 //
-//  CWelcomeController.swift
+//  CPreviewController.swift
 //  TechChallenge
 //
 //  Created by Carlos Uribe on 19/08/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CWelcomeController:UIViewController{
-    weak var welcomeView:VWelcomeView!
+class CPreviewController:UIViewController{
+    weak var previewView:VPreviewView!
     let session:URLSession
 
-    init(controller:CMain){
+    init(model:MWelcomeSearchItems){
         session = CWelcomeController.factorySession()
         super.init(nibName:nil, bundle:nil)
     }
@@ -22,9 +22,9 @@ class CWelcomeController:UIViewController{
     }
 
     override func loadView() {
-        let welcomeView:VWelcomeView = VWelcomeView(controller:self)
-        self.welcomeView = welcomeView
-        view = welcomeView
+        let previewView:VPreviewView = VPreviewView(controller:self)
+        self.previewView = previewView
+        view = previewView
     }
 
     override func viewDidLoad() {
@@ -43,17 +43,5 @@ class CWelcomeController:UIViewController{
 
     //MARK: REQEUST CALLS
 
-    func makeSearchWithString(searchString:String){
-        requestSearch(searchString:searchString)
-    }
-
-    //MARK: RESPONSE
-
-    func searchResponse(model:MWelcomeSearch){
-        DispatchQueue.main.async {
-            [weak self] in
-            self?.welcomeView.model = model
-            self?.welcomeView.collection.reloadData()
-        }
-    }
+    //TODO: IMPLEMENT IMAGE REQUESTER
 }
