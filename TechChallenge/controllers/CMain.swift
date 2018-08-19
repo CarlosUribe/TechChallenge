@@ -21,7 +21,7 @@ class CMain:UIViewController{
 
         super.init(nibName:nil, bundle:nil)
 
-        let mainController:CWelcomeController = CWelcomeController()
+        let mainController:CWelcomeController = CWelcomeController(controller: self)
         let transition:CMainControllerTransition = CMainControllerTransition.Replace(
             controller:mainController)
         transitionTo(transition:transition)

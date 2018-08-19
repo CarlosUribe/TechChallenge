@@ -12,10 +12,12 @@ class VWelcomeViewCell:UICollectionViewCell{
     weak var titleProject:UILabel!
     weak var starProject:UILabel!
     weak var descriptionProject:UILabel!
+    weak var model:MWelcomeSearchItems!
 
     override init(frame:CGRect){
         super.init(frame:frame)
         clipsToBounds = true
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
 
         let titleProject:UILabel = UILabel()
@@ -57,32 +59,32 @@ class VWelcomeViewCell:UICollectionViewCell{
         let metrics:[String : CGFloat] = [:]
 
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[title]-0-|",
+            withVisualFormat:"H:|-10-[title]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-5-[title(20)] ",
+            withVisualFormat:"V:|-5-[title(20)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[start]-0-|",
+            withVisualFormat:"H:|-10-[start]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[title]-0-[start(20)] ",
+            withVisualFormat:"V:[title]-0-[start(20)]",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[description]-0-|",
+            withVisualFormat:"H:|-10-[description]-0-|",
             options:[],
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[start]-0-[description]-0-| ",
+            withVisualFormat:"V:[start]-0-[description]-0-|",
             options:[],
             metrics:metrics,
             views:views))
@@ -92,7 +94,11 @@ class VWelcomeViewCell:UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
 
-//    func config(model:){
-//
-//    }
+    func config(model:MWelcomeSearchItems){
+        self.model = model
+
+        self.titleProject.text = model.displayName
+        self.starProject.text = "Stars: \(model.starGazer)"
+        self.descriptionProject.text = model.description
+    }
 }
