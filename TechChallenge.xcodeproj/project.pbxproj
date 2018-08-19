@@ -13,6 +13,14 @@
 		B2127E922129CFFF00FF6F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2127E912129CFFF00FF6F57 /* Assets.xcassets */; };
 		B2127E952129CFFF00FF6F57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2127E932129CFFF00FF6F57 /* LaunchScreen.storyboard */; };
 		B2127EA02129CFFF00FF6F57 /* TechChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127E9F2129CFFF00FF6F57 /* TechChallengeTests.swift */; };
+		B2127EAC2129D36D00FF6F57 /* CMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EAB2129D36D00FF6F57 /* CMain.swift */; };
+		B2127EAF2129D3E500FF6F57 /* CMainControllerInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EAE2129D3E500FF6F57 /* CMainControllerInteraction.swift */; };
+		B2127EB12129D3F400FF6F57 /* CMainControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB02129D3F400FF6F57 /* CMainControllerTransition.swift */; };
+		B2127EB32129D40000FF6F57 /* CMainControllerTransitionPushRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB22129D40000FF6F57 /* CMainControllerTransitionPushRight.swift */; };
+		B2127EB52129D40B00FF6F57 /* CMainControllerTransitionPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB42129D40B00FF6F57 /* CMainControllerTransitionPresent.swift */; };
+		B2127EB72129D41600FF6F57 /* CMainControllerTransitionReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB62129D41600FF6F57 /* CMainControllerTransitionReplace.swift */; };
+		B2127EB92129D49B00FF6F57 /* CWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EB82129D49B00FF6F57 /* CWelcomeController.swift */; };
+		B2127EBC2129D4DD00FF6F57 /* VMainShade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,14 @@
 		B2127E9B2129CFFF00FF6F57 /* TechChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2127E9F2129CFFF00FF6F57 /* TechChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechChallengeTests.swift; sourceTree = "<group>"; };
 		B2127EA12129CFFF00FF6F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2127EAB2129D36D00FF6F57 /* CMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMain.swift; sourceTree = "<group>"; };
+		B2127EAE2129D3E500FF6F57 /* CMainControllerInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerInteraction.swift; sourceTree = "<group>"; };
+		B2127EB02129D3F400FF6F57 /* CMainControllerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerTransition.swift; sourceTree = "<group>"; };
+		B2127EB22129D40000FF6F57 /* CMainControllerTransitionPushRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerTransitionPushRight.swift; sourceTree = "<group>"; };
+		B2127EB42129D40B00FF6F57 /* CMainControllerTransitionPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerTransitionPresent.swift; sourceTree = "<group>"; };
+		B2127EB62129D41600FF6F57 /* CMainControllerTransitionReplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMainControllerTransitionReplace.swift; sourceTree = "<group>"; };
+		B2127EB82129D49B00FF6F57 /* CWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWelcomeController.swift; sourceTree = "<group>"; };
+		B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMainShade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,9 @@
 		B2127E892129CFFB00FF6F57 /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				B2127EBA2129D4CF00FF6F57 /* Helpers */,
+				B2127EAD2129D3D300FF6F57 /* transitions */,
+				B2127EAA2129D34B00FF6F57 /* controllers */,
 				B2127E8A2129CFFB00FF6F57 /* AppDelegate.swift */,
 				B2127E8C2129CFFB00FF6F57 /* ViewController.swift */,
 				B2127E8E2129CFFB00FF6F57 /* Main.storyboard */,
@@ -94,6 +113,35 @@
 				B2127EA12129CFFF00FF6F57 /* Info.plist */,
 			);
 			path = TechChallengeTests;
+			sourceTree = "<group>";
+		};
+		B2127EAA2129D34B00FF6F57 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2127EAB2129D36D00FF6F57 /* CMain.swift */,
+				B2127EB82129D49B00FF6F57 /* CWelcomeController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		B2127EAD2129D3D300FF6F57 /* transitions */ = {
+			isa = PBXGroup;
+			children = (
+				B2127EAE2129D3E500FF6F57 /* CMainControllerInteraction.swift */,
+				B2127EB02129D3F400FF6F57 /* CMainControllerTransition.swift */,
+				B2127EB22129D40000FF6F57 /* CMainControllerTransitionPushRight.swift */,
+				B2127EB42129D40B00FF6F57 /* CMainControllerTransitionPresent.swift */,
+				B2127EB62129D41600FF6F57 /* CMainControllerTransitionReplace.swift */,
+			);
+			path = transitions;
+			sourceTree = "<group>";
+		};
+		B2127EBA2129D4CF00FF6F57 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +245,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2127EB32129D40000FF6F57 /* CMainControllerTransitionPushRight.swift in Sources */,
+				B2127EAC2129D36D00FF6F57 /* CMain.swift in Sources */,
+				B2127EB52129D40B00FF6F57 /* CMainControllerTransitionPresent.swift in Sources */,
+				B2127EB12129D3F400FF6F57 /* CMainControllerTransition.swift in Sources */,
+				B2127EB72129D41600FF6F57 /* CMainControllerTransitionReplace.swift in Sources */,
 				B2127E8D2129CFFB00FF6F57 /* ViewController.swift in Sources */,
+				B2127EAF2129D3E500FF6F57 /* CMainControllerInteraction.swift in Sources */,
+				B2127EBC2129D4DD00FF6F57 /* VMainShade.swift in Sources */,
 				B2127E8B2129CFFB00FF6F57 /* AppDelegate.swift in Sources */,
+				B2127EB92129D49B00FF6F57 /* CWelcomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
