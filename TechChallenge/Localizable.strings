@@ -10,3 +10,9 @@
 "TestTaskerURLRequestErrorNoData_text"="Error no data recived";
 "TestTaskerURLRequestErrorParsing_text"="Error parsing JSON";
 "TestTaskerURLRequestErrorResponse_text"="Server response is incorrect";
+"VPreviewView_readmeTag"="Readme.md";
+"VWelcomeViewBar_title"="Github Trends";
+"VWelcomeView_placeHolderSearch"="Search";
+"VPreviewView_stars"="%@ Stars";
+"VPreviewView_forks"="%@ Forks";
+

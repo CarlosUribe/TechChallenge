@@ -11,8 +11,10 @@ import UIKit
 class CPreviewController:UIViewController{
     weak var previewView:VPreviewView!
     let session:URLSession
+    var model:MWelcomeSearchItems!
 
     init(model:MWelcomeSearchItems){
+        self.model = model
         session = CWelcomeController.factorySession()
         super.init(nibName:nil, bundle:nil)
     }

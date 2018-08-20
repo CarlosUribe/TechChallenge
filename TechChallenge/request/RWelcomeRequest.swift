@@ -52,7 +52,7 @@ extension CWelcomeController{
     class func factorySearchRequester(searchString:String) -> URLRequest?{
         guard
 
-            let url:URL = factoryLocationURL(searchString: searchString)
+            let url:URL = factorySearchURL(searchString: searchString)
 
             else{
                 return nil
@@ -65,12 +65,12 @@ extension CWelcomeController{
 
     //Creation of URL to be requested
 
-    class func factoryLocationURL(searchString:String) -> URL?{
+    class func factorySearchURL(searchString:String) -> URL?{
         guard
 
             let urlMap:[String:String] = factoryUrl(),
             let urlServer:String = urlMap[kUrlServer],
-            let urlLocations:String = urlMap[kUrlSearchApp]
+            let urlSearch:String = urlMap[kUrlSearchApp]
 
             else{
                 return nil
@@ -78,9 +78,7 @@ extension CWelcomeController{
 
         var compositeUrl:String = String()
         compositeUrl.append(urlServer)
-        compositeUrl.append(String(format: urlLocations, searchString))
-
-        print(compositeUrl)
+        compositeUrl.append(String(format: urlSearch, searchString))
 
         let url:URL? = URL(string:compositeUrl)
 
@@ -126,44 +124,6 @@ extension CWelcomeController{
         return urlSession
     }
 
-    //MARK: LOCATION DATA REQUESTER
-
-    class func factoryLocationDataRequester(locationId:Int) -> URLRequest?{
-        guard
-
-            let url:URL = factoryLocationDataURL(locationId:locationId)
-
-            else{
-                return nil
-        }
-
-        let request:URLRequest = factoryDataRequest(url:url)
-
-        return request
-    }
-
-    class func factoryLocationDataURL(locationId:Int) -> URL?{
-        guard
-
-            let urlMap:[String:String] = factoryUrl(),
-            let urlServer:String = urlMap[kUrlServer],
-            let urlLocations:String = urlMap[kUrlLocationsData]
-
-            else{
-                return nil
-        }
-
-        let locationCompose:String = "\(locationId).json"
-        var compositeUrl:String = String()
-        compositeUrl.append(urlServer)
-        compositeUrl.append(urlLocations)
-        compositeUrl.append(locationCompose)
-
-        let url:URL? = URL(string:compositeUrl)
-
-        return url
-    }
-
     //MARK: IMAGE REQUESTER
 
     class func factoryImageRequest(url:String) -> URLRequest?{
@@ -171,8 +131,7 @@ extension CWelcomeController{
 
             let url:URL = factoryImageURL(alias: url)
 
-            else
-        {
+            else{
             return nil
         }
 
