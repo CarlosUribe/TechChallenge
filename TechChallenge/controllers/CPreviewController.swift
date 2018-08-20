@@ -29,6 +29,7 @@ class CPreviewController:UIViewController{
         view = previewView
 
         requestImages(model: self.model)
+        requestReadmeFile(model: self.model)
     }
 
     override func viewDidLoad() {
@@ -50,7 +51,14 @@ class CPreviewController:UIViewController{
     func imageResponse(model:MWelcomeSearchItems){
         DispatchQueue.main.async {
             [weak self] in
-                self?.previewView.avatarImage.image = model.avatarImage
+            self?.previewView.avatarImage.image = model.avatarImage
+        }
+    }
+
+    func readmeResponse(model:MPreviewReadme){
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.previewView.readmeDescription.text = model.readmeDecoded
         }
     }
 }

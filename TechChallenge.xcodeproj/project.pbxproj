@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21133FC212A89F500C84913 /* MPreviewReadme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21133FB212A89F500C84913 /* MPreviewReadme.swift */; };
 		B2127E8B2129CFFB00FF6F57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127E8A2129CFFB00FF6F57 /* AppDelegate.swift */; };
 		B2127E8D2129CFFB00FF6F57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127E8C2129CFFB00FF6F57 /* ViewController.swift */; };
 		B2127E902129CFFB00FF6F57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2127E8E2129CFFB00FF6F57 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21133FB212A89F500C84913 /* MPreviewReadme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPreviewReadme.swift; sourceTree = "<group>"; };
 		B2127E872129CFFB00FF6F57 /* TechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2127E8A2129CFFB00FF6F57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2127E8C2129CFFB00FF6F57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				B2127ED32129FDFE00FF6F57 /* MWelcomeSearch.swift */,
 				B2127ED52129FE8800FF6F57 /* MWelcomeSearchItems.swift */,
 				B2127ED7212A009700FF6F57 /* MWelcomeOwner.swift */,
+				B21133FB212A89F500C84913 /* MPreviewReadme.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				B2127EB52129D40B00FF6F57 /* CMainControllerTransitionPresent.swift in Sources */,
 				B2127EBF2129D66400FF6F57 /* VWelcomeView.swift in Sources */,
 				B2127EC82129EA1700FF6F57 /* RWelcomeRequest.swift in Sources */,
+				B21133FC212A89F500C84913 /* MPreviewReadme.swift in Sources */,
 				B2127ECD2129EF5400FF6F57 /* CWelcomeExtension.swift in Sources */,
 				B2127ED62129FE8800FF6F57 /* MWelcomeSearchItems.swift in Sources */,
 				B2127EB12129D3F400FF6F57 /* CMainControllerTransition.swift in Sources */,
