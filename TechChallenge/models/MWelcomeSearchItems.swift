@@ -6,7 +6,7 @@
 //  Copyright © 2018 CarlosUribe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MWelcomeSearchItems{
     var displayName:String
@@ -27,6 +27,7 @@ class MWelcomeSearchItems{
     var forkCount:Int
     var defaultBranch:String
     var score:Double
+    var avatarImage:UIImage?
 
     init?(json:Any) {
         guard
@@ -72,5 +73,9 @@ class MWelcomeSearchItems{
         self.forkCount = rawForkCount
         self.defaultBranch = rawDefaultBranch
         self.score = rawScore
+    }
+
+    func loadAvatarImage(image:UIImage){
+        self.avatarImage = image
     }
 }

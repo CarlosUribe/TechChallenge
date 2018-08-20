@@ -18,7 +18,6 @@ class VPreviewViewBar:UIView{
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         clipsToBounds = true
-        isUserInteractionEnabled = false
 
         self.controller = controller
         let model:MWelcomeSearchItems = controller.model

@@ -37,6 +37,7 @@
 		B2127EDC212A175A00FF6F57 /* VPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDB212A175A00FF6F57 /* VPreviewView.swift */; };
 		B2127EDE212A196400FF6F57 /* VPreviewViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDD212A196400FF6F57 /* VPreviewViewBar.swift */; };
 		B2127EE0212A1A3A00FF6F57 /* UIVIewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDF212A1A3A00FF6F57 /* UIVIewControllerExtension.swift */; };
+		B2127EE2212A41FD00FF6F57 /* CPreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EE1212A41FD00FF6F57 /* CPreviewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		B2127EDB212A175A00FF6F57 /* VPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPreviewView.swift; sourceTree = "<group>"; };
 		B2127EDD212A196400FF6F57 /* VPreviewViewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPreviewViewBar.swift; sourceTree = "<group>"; };
 		B2127EDF212A1A3A00FF6F57 /* UIVIewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewControllerExtension.swift; sourceTree = "<group>"; };
+		B2127EE1212A41FD00FF6F57 /* CPreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPreviewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				B2127ECC2129EF5400FF6F57 /* CWelcomeExtension.swift */,
+				B2127EE1212A41FD00FF6F57 /* CPreviewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				B2127EB72129D41600FF6F57 /* CMainControllerTransitionReplace.swift in Sources */,
 				B2127E8D2129CFFB00FF6F57 /* ViewController.swift in Sources */,
 				B2127EAF2129D3E500FF6F57 /* CMainControllerInteraction.swift in Sources */,
+				B2127EE2212A41FD00FF6F57 /* CPreviewExtension.swift in Sources */,
 				B2127EBC2129D4DD00FF6F57 /* VMainShade.swift in Sources */,
 				B2127ED42129FDFE00FF6F57 /* MWelcomeSearch.swift in Sources */,
 				B2127E8B2129CFFB00FF6F57 /* AppDelegate.swift in Sources */,

@@ -21,7 +21,12 @@ class MWelcomeSearch{
         }
 
         var items:[MWelcomeSearchItems] = []
-        let itemsInResult:[[String : Any]] = (jsonMap["items"] as? [[String : Any]])!
+
+        guard
+        let itemsInResult:[[String : Any]] = jsonMap["items"] as? [[String : Any]]
+            else{
+                return nil
+        }
 
         for result:Any in itemsInResult{
             guard
