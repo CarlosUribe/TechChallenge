@@ -18,7 +18,6 @@ extension CWelcomeController{
     private static let kResourceExtension:String = "plist"
     private static let kUrlServer:String = "testServer"
     private static let kUrlSearchApp:String = "app"
-    private static let kUrlLocationsData:String = "testData"
     private static let kUrlImageData:String = "imageData"
 
     //Session configuration
@@ -147,23 +146,8 @@ extension CWelcomeController{
     }
 
     class func factoryImageURL(alias:String) -> URL?{
-        guard
-
-            let urlMap:[String:String] = factoryUrl(),
-            let urlServer:String = urlMap[kUrlServer],
-            let urlLocations:String = urlMap[kUrlImageData]
-
-            else{
-                return nil
-        }
-
         let urlImage:String = alias
-        var compositeUrl:String = String()
-        compositeUrl.append(urlServer)
-        compositeUrl.append(urlLocations)
-        compositeUrl.append(urlImage)
-
-        let url:URL? = URL(string:compositeUrl)
+        let url:URL? = URL(string:urlImage)
 
         return url
     }

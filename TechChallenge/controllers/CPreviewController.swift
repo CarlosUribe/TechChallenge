@@ -27,6 +27,8 @@ class CPreviewController:UIViewController{
         let previewView:VPreviewView = VPreviewView(controller:self)
         self.previewView = previewView
         view = previewView
+
+        requestImages(model: self.model)
     }
 
     override func viewDidLoad() {
@@ -45,5 +47,10 @@ class CPreviewController:UIViewController{
 
     //MARK: REQEUST CALLS
 
-    //TODO: IMPLEMENT IMAGE REQUESTER
+    func imageResponse(model:MWelcomeSearchItems){
+        DispatchQueue.main.async {
+            [weak self] in
+                self?.previewView.avatarImage.image = model.avatarImage
+        }
+    }
 }
