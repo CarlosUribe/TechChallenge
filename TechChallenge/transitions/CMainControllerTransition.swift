@@ -19,19 +19,19 @@ class CMainControllerTransition{
     var controller:UIViewController!
     var previousTransition:CMainControllerTransition?
 
-    class func PushRight(controller:UIViewController, poptype:CMainControllerTransitionPoptype) -> CMainControllerTransitionPushRight{
+    class func pushRight(controller:UIViewController, poptype:CMainControllerTransitionPoptype) -> CMainControllerTransitionPushRight{
         let transition:CMainControllerTransitionPushRight = CMainControllerTransitionPushRight(controller:controller, poptype:poptype)
 
         return transition
     }
 
-    class func Present(controller:UIViewController) -> CMainControllerTransitionPresent{
+    class func present(controller:UIViewController) -> CMainControllerTransitionPresent{
         let transition:CMainControllerTransitionPresent = CMainControllerTransitionPresent(controller:controller)
 
         return transition
     }
 
-    class func Replace(controller:UIViewController) -> CMainControllerTransitionReplace{
+    class func replace(controller:UIViewController) -> CMainControllerTransitionReplace{
         let transition:CMainControllerTransitionReplace = CMainControllerTransitionReplace(controller:controller)
 
         return transition

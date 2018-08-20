@@ -35,6 +35,8 @@
 		B2127ED8212A009700FF6F57 /* MWelcomeOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127ED7212A009700FF6F57 /* MWelcomeOwner.swift */; };
 		B2127EDA212A16E600FF6F57 /* CPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127ED9212A16E600FF6F57 /* CPreviewController.swift */; };
 		B2127EDC212A175A00FF6F57 /* VPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDB212A175A00FF6F57 /* VPreviewView.swift */; };
+		B2127EDE212A196400FF6F57 /* VPreviewViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDD212A196400FF6F57 /* VPreviewViewBar.swift */; };
+		B2127EE0212A1A3A00FF6F57 /* UIVIewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2127EDF212A1A3A00FF6F57 /* UIVIewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		B2127ED7212A009700FF6F57 /* MWelcomeOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWelcomeOwner.swift; sourceTree = "<group>"; };
 		B2127ED9212A16E600FF6F57 /* CPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPreviewController.swift; sourceTree = "<group>"; };
 		B2127EDB212A175A00FF6F57 /* VPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPreviewView.swift; sourceTree = "<group>"; };
+		B2127EDD212A196400FF6F57 /* VPreviewViewBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPreviewViewBar.swift; sourceTree = "<group>"; };
+		B2127EDF212A1A3A00FF6F57 /* UIVIewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 			children = (
 				B2127EBB2129D4DD00FF6F57 /* VMainShade.swift */,
 				B2127EC22129D8E000FF6F57 /* CategoryUICollectionReusableView.swift */,
+				B2127EDF212A1A3A00FF6F57 /* UIVIewControllerExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				B2127EC02129D88100FF6F57 /* VWelcomeViewCell.swift */,
 				B2127EC42129D96500FF6F57 /* VWelcomeViewBar.swift */,
 				B2127EDB212A175A00FF6F57 /* VPreviewView.swift */,
+				B2127EDD212A196400FF6F57 /* VPreviewViewBar.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2127EDE212A196400FF6F57 /* VPreviewViewBar.swift in Sources */,
 				B2127EB32129D40000FF6F57 /* CMainControllerTransitionPushRight.swift in Sources */,
 				B2127EAC2129D36D00FF6F57 /* CMain.swift in Sources */,
 				B2127EC12129D88100FF6F57 /* VWelcomeViewCell.swift in Sources */,
+				B2127EE0212A1A3A00FF6F57 /* UIVIewControllerExtension.swift in Sources */,
 				B2127EB52129D40B00FF6F57 /* CMainControllerTransitionPresent.swift in Sources */,
 				B2127EBF2129D66400FF6F57 /* VWelcomeView.swift in Sources */,
 				B2127EC82129EA1700FF6F57 /* RWelcomeRequest.swift in Sources */,
@@ -512,7 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.axkansoftware.TechChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -530,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.axkansoftware.TechChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -15,7 +15,7 @@ class VWelcomeView:UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     weak var searchBar:UITextField!
     private let kCornerRadius:CGFloat = 8.0
     private let kBarHeight:CGFloat = 88.0
-    private let kCellConstantHeight:CGFloat = 120
+    private let kCellConstantHeight:CGFloat = 116
     var model:MWelcomeSearch?
 
     convenience init(controller:CWelcomeController){
@@ -31,7 +31,7 @@ class VWelcomeView:UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         let searchBar:UITextField = UITextField()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.clipsToBounds = true
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = NSLocalizedString("VWelcomeView_placeHolderSearch", comment: "")
         searchBar.textAlignment = .center
         searchBar.backgroundColor = .white
         searchBar.clearButtonMode = .whileEditing
@@ -142,7 +142,8 @@ class VWelcomeView:UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         dismissKeyboard()
 
-        
+        let model:MWelcomeSearchItems = getModelItem(index: indexPath.row)
+        controller.transitionTo(model: model)
     }
 
     //MARK: FLOW DELEGATES

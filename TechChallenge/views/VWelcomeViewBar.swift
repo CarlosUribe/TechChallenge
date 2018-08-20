@@ -26,7 +26,7 @@ class VWelcomeViewBar:UIView{
         labelTitle.numberOfLines = 0
         labelTitle.textAlignment = .center
         labelTitle.textColor = UIColor(red:0.16, green:0.39, blue:0.63, alpha:1.0)
-        labelTitle.text = "Github Trends"
+        labelTitle.text = NSLocalizedString("VWelcomeViewBar_title", comment: "")
 
         addSubview(labelTitle)
 

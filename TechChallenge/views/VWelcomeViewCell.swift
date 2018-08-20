@@ -20,6 +20,11 @@ class VWelcomeViewCell:UICollectionViewCell{
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
 
+        let separator:UIView = UIView()
+        separator.clipsToBounds = true
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = UIColor(red:0.91, green:0.91, blue:0.94, alpha:0.8)
+
         let titleProject:UILabel = UILabel()
         titleProject.clipsToBounds = true
         titleProject.translatesAutoresizingMaskIntoConstraints = false
@@ -50,11 +55,13 @@ class VWelcomeViewCell:UICollectionViewCell{
         addSubview(titleProject)
         addSubview(starProject)
         addSubview(descriptionProject)
+        addSubview(separator)
 
         let views:[String : Any] = [
             "title":titleProject,
             "start":starProject,
-            "description":descriptionProject]
+            "description":descriptionProject,
+            "separator":separator]
 
         let metrics:[String : CGFloat] = [:]
 
@@ -84,7 +91,17 @@ class VWelcomeViewCell:UICollectionViewCell{
             metrics:metrics,
             views:views))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:[start]-0-[description]-0-|",
+            withVisualFormat:"V:[start]-0-[description(70)]",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"H:|-20-[separator]-0-|",
+            options:[],
+            metrics:metrics,
+            views:views))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat:"V:[separator(1)]-0-|",
             options:[],
             metrics:metrics,
             views:views))

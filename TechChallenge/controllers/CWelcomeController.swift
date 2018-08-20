@@ -56,4 +56,17 @@ class CWelcomeController:UIViewController{
             self?.welcomeView.collection.reloadData()
         }
     }
+
+    //MARK: TRANSITIONS
+
+    func transitionTo(model:MWelcomeSearchItems){
+        let controller:CPreviewController = CPreviewController(model:model)
+        let transition:CMainControllerTransition = CMainControllerTransition.pushRight(
+            controller:controller,
+            poptype:
+            CMainControllerTransition.CMainControllerTransitionPoptype.none
+        )
+
+        parentController.transitionTo(transition:transition)
+    }
 }
