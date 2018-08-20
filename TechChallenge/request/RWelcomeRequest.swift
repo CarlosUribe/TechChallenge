@@ -12,10 +12,11 @@ import UIKit
 
 extension CWelcomeController{
     private static let kTimeOutData:TimeInterval = 50
-    private static let kTimeOutImage:TimeInterval = 150
     private static let kGETRequest:String = "GET"
     private static let kResourceName:String = "urlList"
     private static let kResourceExtension:String = "plist"
+    private static let kUrlServerReadme:String = "readme"
+    private static let kUrlHTMLServer:String = "htmlServer"
     private static let kUrlServer:String = "testServer"
     private static let kUrlSearchApp:String = "app"
     private static let kUrlImageData:String = "imageData"
@@ -62,6 +63,20 @@ extension CWelcomeController{
         return request
     }
 
+    class func factoryReadmeRequester(projectURL:String, projectBranch:String) -> URLRequest?{
+        guard
+
+            let url:URL = factoryReadmeURL(projectURL: projectURL, projectBranch: projectBranch)
+
+            else{
+                return nil
+        }
+
+        let request:URLRequest = factoryDataRequest(url:url)
+
+        return request
+    }
+
     //Creation of URL to be requested
 
     class func factorySearchURL(searchString:String) -> URL?{
@@ -78,6 +93,26 @@ extension CWelcomeController{
         var compositeUrl:String = String()
         compositeUrl.append(urlServer)
         compositeUrl.append(String(format: urlSearch, searchString))
+
+        let url:URL? = URL(string:compositeUrl)
+
+        return url
+    }
+
+    class func factoryReadmeURL(projectURL:String, projectBranch:String) -> URL?{
+        guard
+
+            let urlMap:[String:String] = factoryUrl(),
+            let urlReadme:String = urlMap[kUrlServerReadme],
+            let urlServer:String = urlMap[kUrlServer]
+
+            else{
+                return nil
+        }
+
+        var compositeUrl:String = String()
+        compositeUrl.append(urlServer)
+        compositeUrl.append(String(format: urlReadme, projectURL, projectBranch))
 
         let url:URL? = URL(string:compositeUrl)
 
@@ -121,51 +156,5 @@ extension CWelcomeController{
         let urlSession:URLSession = URLSession(configuration:configuration)
 
         return urlSession
-    }
-
-    //MARK: IMAGE REQUESTER
-
-    class func factoryImageRequest(url:String) -> URLRequest?{
-        guard
-
-            let url:URL = factoryImageURL(alias: url)
-
-            else{
-            return nil
-        }
-
-        var request:URLRequest = URLRequest(
-            url:url,
-            cachePolicy:
-            URLRequest.CachePolicy.reloadIgnoringLocalCacheData,
-            timeoutInterval:kTimeOutImage)
-        request.httpMethod = kGETRequest
-        request.allowsCellularAccess = true
-
-        return request
-    }
-
-    class func factoryImageURL(alias:String) -> URL?{
-        let urlImage:String = alias
-        let url:URL? = URL(string:urlImage)
-
-        return url
-    }
-
-    class func factoryImage(dataUrl:URL) -> UIImage?{
-        let rawData:Data
-
-        do{
-            try rawData = Data(
-                contentsOf:dataUrl)
-        }
-        catch{
-            return nil
-        }
-
-        let image:UIImage? = UIImage(
-            data:rawData)
-
-        return image
     }
 }

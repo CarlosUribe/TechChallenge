@@ -15,6 +15,7 @@ class MWelcomeOwner{
     var avatarURL:String
     var userURL:String
     var eventsURL:String
+    var htmlURL:String
     var type:String
 
     init?(json:[String : Any]) {
@@ -25,7 +26,8 @@ class MWelcomeOwner{
             let rawAvatarURL:String = json["avatar_url"] as? String,
             let rawUserURL:String = json["url"] as? String,
             let rawEventsURL:String = json["received_events_url"] as? String,
-            let rawType:String = json["type"] as? String
+            let rawType:String = json["type"] as? String,
+            let rawHtmlURL:String = json["html_url"] as? String
 
             else{
                 return nil
@@ -38,5 +40,6 @@ class MWelcomeOwner{
         self.userURL = rawUserURL
         self.eventsURL = rawEventsURL
         self.type = rawType
+        self.htmlURL = rawHtmlURL
     }
 }

@@ -64,4 +64,74 @@ extension CPreviewController{
             self?.imageResponse(model: model)
         }
     }
+
+    func requestReadmeFile(model:MWelcomeSearchItems){
+        guard
+
+            let request:URLRequest = CWelcomeController.factoryReadmeRequester(projectURL: model.fullName, projectBranch: model.defaultBranch)
+
+            else{
+                let error:String = NSLocalizedString("TestTaskerURLRequestError_text", comment: "")
+                print(error)
+                return
+        }
+
+        let task:URLSessionTask = session.dataTask(with:request){
+            [weak self] (data:Data?, urlResponse:URLResponse?, error:Error?) in
+
+            if let error:Error = error{
+                print(error)
+            }
+            else{
+                self?.requestReadmeResponse(data:data)
+            }
+        }
+
+        task.resume()
+    }
+
+    private func requestReadmeResponse(data:Data?){
+        guard
+
+            let data:Data = data
+
+            else{
+                let error:String = NSLocalizedString("TestTaskerURLRequestErrorNoData_text", comment: "")
+                print(error)
+
+                return
+        }
+
+        let json:Any
+
+        do{
+            try json = JSONSerialization.jsonObject(
+                with:data,
+                options:JSONSerialization.ReadingOptions.allowFragments)
+        }
+        catch{
+            let error:String = NSLocalizedString("TestTaskerURLRequestErrorParsing_text", comment: "")
+            print(error)
+
+            return
+        }
+
+        guard
+
+            let model:MPreviewReadme = MPreviewReadme(json:json)
+
+            else{
+                let error:String = NSLocalizedString("TestTaskerURLRequestErrorResponse_text", comment: "")
+                print(error)
+
+                return
+        }
+
+        DispatchQueue.main.async
+            { [weak self] in
+
+                self?.readmeResponse(model:model)
+        }
+    }
+
 }

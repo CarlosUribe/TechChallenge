@@ -29,14 +29,14 @@ extension CWelcomeController{
                 print(error)
             }
             else{
-                self?.requestLocationsResponse(data:data)
+                self?.requestSearchResponse(data:data)
             }
         }
 
         task.resume()
     }
 
-    private func requestLocationsResponse(data:Data?){
+    private func requestSearchResponse(data:Data?){
         guard
 
             let data:Data = data
